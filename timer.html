@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#timer {
+			text-align: center;
+			margin: 5px;
+		}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+<body> 
+	<script>
+		var time = new Date(2000, 0, 1, 0, 55, 0);
+		function startTimer(){
+
+		}
+		$(document).ready(function() {
+			var correctSize = Math.min($(window).height(), $(window).width()*25/70);
+			$("#timer").css({ 'font-size': correctSize });
+			$("#button").click(function() {
+				startTimer();
+			});
+			$("#timer").text(time.toTimeString());
+		});
+
+		$(window).resize(function() {
+			correctSize = Math.min($(window).height(), $(window).width()*25/70);
+			$("#timer").css({ 'font-size': correctSize });
+		});
+
+	</script>
+	<center>
+		<div id="timer">00:00</div>
+		<button>Start</button>
+	</center>
+</body>
+</html>
