@@ -1,0 +1,18 @@
+#timer {
+	text-align: center;
+	margin: 5px;
+}
+
+#container {
+	float: center;
+	position: relative;
+	cursor: pointer;
+}
+
+#container:hover {
+	float: center;
+	position: relative;
+	cursor: pointer;
+	background-color: #000000;
+	color:	#ffffff;
+}

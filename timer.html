@@ -1,38 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		#timer {
-			text-align: center;
-			margin: 5px;
-		}
-	</style>
+	<link rel="stylesheet" text="text/css" href="style.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script src="timer.js"></script>
 </head>
 <body> 
-	<script>
-		var time = new Date(2000, 0, 1, 0, 55, 0);
-		function startTimer(){
-
-		}
-		$(document).ready(function() {
-			var correctSize = Math.min($(window).height(), $(window).width()*25/70);
-			$("#timer").css({ 'font-size': correctSize });
-			$("#button").click(function() {
-				startTimer();
-			});
-			$("#timer").text(time.toTimeString());
-		});
-
-		$(window).resize(function() {
-			correctSize = Math.min($(window).height(), $(window).width()*25/70);
-			$("#timer").css({ 'font-size': correctSize });
-		});
-
-	</script>
 	<center>
-		<div id="timer">00:00</div>
-		<button>Start</button>
+		<div id="container">
+			<div id="timer"></div>
+		</div>
+		<div id="form">
+			Title: <input type="text" id="title"> 
+			Time: <input type="text" id="min" size="3"> min
+			<button>Set</button>
+		</div>
 	</center>
 </body>
 </html>
