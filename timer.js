@@ -16,36 +16,47 @@ function Time(seconds){
 	}
 }
 
-var titleString = "";
 var time = new Time(0);
-$(document).ready(function() {
-	var correctSize = Math.min($(window).height(), $(window).width()*25/70);
+var heightToWidth = 25/70; //Aprox. ratio of height to width for 2 digit min;
 
+function fixSize() {
+	var correctSize = Math.min($(window).height(), $(window).width()*heightToWidth);
 	$("#timer").css({ 'font-size': correctSize });
+}
+
+
+$(document).ready(function() {
+	fixSize();
+
 	$("#container").css({ 'height': "100%" });
 
-	$("#timer").click(function() {
+	$("#starttimer").click(function() {
 		setInterval(function() {
 			if (time.seconds > 0) {
 				time.decrement();
 			}
 			$("#timer").text(time.toString());
 		}, 1000)
+		$(this).hide();
 	});
 
-	$("button").click(function( event ) {
+	$("#settimer").click(function( event ) {
 		event.preventDefault();
 		titleString = $("#title").val();
 		minutes = $("#min").val();
 		time.seconds = minutes*60;
+		if (time.seconds >= 6000) {
+			heightToWidth = 25/84; //Approx ratio of height to width for 3 digit min
+			fixSize();
+		}
 		$("#timer").text(time.toString());
 		$("#form").hide();	
+		$("#start").show();
 	});
 
 	$("#timer").text(time.toString());
 });
 
 $(window).resize(function() {
-	correctSize = Math.min($(window).height(), $(window).width()*25/70);
-	$("#timer").css({ 'font-size': correctSize });
+	fixSize();
 });

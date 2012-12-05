@@ -6,13 +6,8 @@
 #container {
 	float: center;
 	position: relative;
-	cursor: pointer;
 }
 
-#container:hover {
-	float: center;
-	position: relative;
-	cursor: pointer;
-	background-color: #000000;
-	color:	#ffffff;
+#start {
+	display: none;
 }
