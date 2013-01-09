@@ -17,7 +17,7 @@ function Time(seconds){
 }
 
 var time = new Time(0);
-var heightToWidth = 25/70; //Aprox. ratio of height to width for 2 digit min;
+var heightToWidth = 20/70; //Aprox. ratio of height to width for 2 digit min;
 
 function fixSize() {
 	var correctSize = Math.min($(window).height(), $(window).width()*heightToWidth);
